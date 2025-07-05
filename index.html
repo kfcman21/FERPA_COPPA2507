@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초등교사 대상: 에듀테크와 학생 개인정보 보호 (FERPA & COPPA)</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            color: #1e3a8a; /* Default Text Color: 군청색 (blue-900) */
+        }
+        /* 사용자 지정 글자 크기 적용 */
+        .main-content p, .main-content li, .main-content .custom-list-item {
+            font-size: 22px; /* 본문 내용은 가독성을 위해 22px로 조정 (35px은 웹 환경에서 과도하게 큽니다) */
+            line-height: 1.8;
+        }
+        .main-content .emphasis-box {
+            font-size: 22px;
+        }
+        .nav-link {
+            font-size: 20px; /* 네비게이션 바 글자 크기 20px로 조정 */
+        }
+        /* 모바일 반응형 글자 크기 */
+        @media (max-width: 768px) {
+            .main-content p, .main-content li, .main-content .custom-list-item, .main-content .emphasis-box {
+                font-size: 18px;
+            }
+            .nav-link {
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 2.5rem; /* 40px */
+            }
+            h2 {
+                font-size: 2rem; /* 32px */
+            }
+            h3 {
+                font-size: 1.5rem; /* 24px */
+            }
+        }
+
+        /* 아코디언(details) 스타일링 */
+        details > summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary .arrow-down {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-sky-50">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center space-x-2">
+                        <span class="text-2xl md:text-3xl font-bold text-sky-800">🛡️ 에듀테크 개인정보 보호</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div id="nav-links" class="ml-10 flex items-baseline space-x-4">
+                        </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-sky-800 hover:bg-sky-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-100 focus:ring-white">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div id="mobile-nav-links" class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto p-5 md:p-10 main-content">
+        <header class="text-center my-12 md:my-16">
+            <p class="text-sky-600 font-semibold text-xl md:text-2xl">초등학교 선생님을 위한 디지털 교육 가이드</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-2 text-slate-800">에듀테크와 학생 개인정보 보호<br>(FERPA & COPPA)</h1>
+            <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl">
+                오늘날 디지털 교육 환경에서 학생들의 개인정보를 보호하는 것은 그 어느 때보다 중요합니다. <br>에듀테크 도구를 활용하실 때 꼭 알아야 할 법률과 고려사항을 쉽게 정리해 드릴게요.
+            </p>
+        </header>
+
+        <div class="bg-orange-100 border-l-8 border-orange-400 p-6 md:p-8 rounded-r-lg my-12 shadow-md">
+            <div class="flex items-center">
+                <div class="text-4xl mr-5">💡</div>
+                <p class="font-semibold emphasis-box text-orange-800">
+                    디지털 학습 도구가 빠르게 정착하면서 학생들의 개인정보가 다양한 방식으로 수집되고 있습니다. 우리 학생들의 안전과 신뢰를 지키기 위해, FERPA와 COPPA라는 두 가지 미국 연방법을 이해하는 것은 매우 중요합니다.
+                </p>
+            </div>
+        </div>
+        
+        <div class="bg-slate-200 border-2 border-dashed border-slate-400 text-slate-600 text-center p-8 rounded-lg my-12 text-xl">
+            <b>[이미지 제안]</b><br> FERPA(교육 기록 보호)와 COPPA(13세 미만 온라인 정보 보호)의 적용 대상, 보호 정보, 핵심 요건을 한눈에 비교하는 인포그래픽
+        </div>
+
+
+        <section id="section-1" class="my-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 border-l-8 border-teal-500 pl-4 mb-8 flex items-center">📜 FERPA란 무엇인가요?</h2>
+            <div class="space-y-6">
+                <p>FERPA(Family Educational Rights and Privacy Act)는 미국 연방법으로, 연방 기금을 받는 교육 기관이 보유한 <strong class="text-teal-700 font-semibold">학생 교육 기록의 개인 정보 보호</strong>를 규정하는 법입니다. 부모와 학생에게 중요한 권리를 부여하죠.</p>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-teal-800 mb-4">주요 내용 짚어보기</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3 text-teal-500">✅</span>
+                            <span class="custom-list-item"><strong class="font-semibold">적용 대상:</strong> 연방 기금을 받는 거의 모든 공립 학교 및 학군에 적용됩니다.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3 text-teal-500">✅</span>
+                            <span class="custom-list-item"><strong class="font-semibold">보호 정보:</strong> 성적, 시험 결과, 징계 기록, 연락처 등 학생과 직접 관련된 모든 개인 식별 정보(PII)가 포함된 '교육 기록'을 보호합니다.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3 text-teal-500">✅</span>
+                            <span class="custom-list-item"><strong class="font-semibold">핵심 준수 요건:</strong>
+                                <ul class="list-disc list-inside mt-2 space-y-2 pl-4">
+                                    <li>학부모나 학생(18세 이상)의 동의 없이 기록을 공유할 수 없습니다.</li>
+                                    <li>데이터는 안전하게 보관하고 접근 기록을 유지해야 합니다.</li>
+                                    <li>학부모와 학생은 자신의 교육 기록을 열람하고, 검토하며, 변경을 요청할 권리가 있습니다.</li>
+                                    <li>학교 관계자는 <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded">'합법적인 교육적 이해관계'</span>가 있을 때만 학생 기록에 접근할 수 있습니다.</li>
+                                </ul>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-2" class="my-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 border-l-8 border-sky-500 pl-4 mb-8 flex items-center">🧒 COPPA란 무엇인가요?</h2>
+            <div class="space-y-6">
+                <p>COPPA(Children’s Online Privacy Protection Act)는 <strong class="text-sky-700 font-semibold">13세 미만 아동의 온라인 개인정보 보호</strong>를 위해 미국 연방거래위원회(FTC)에서 만든 법입니다. 어린이 대상 웹사이트나 앱 운영자에게 적용돼요.</p>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-sky-800 mb-4">주요 내용 짚어보기</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3 text-sky-500">✅</span>
+                            <span class="custom-list-item"><strong class="font-semibold">적용 대상:</strong> 13세 미만 아동의 정보를 수집하는 모든 상업적 웹사이트, 앱, 온라인 서비스 운영자에게 적용됩니다.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3 text-sky-500">✅</span>
+                            <span class="custom-list-item"><strong class="font-semibold">보호 정보:</strong> 이름, 주소, 이메일, 사진, 비디오, 음성 녹음, 위치 정보 등 온라인에서 수집되는 개인 식별 정보를 보호합니다.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl mr-3 text-sky-500">✅</span>
+                            <span class="custom-list-item"><strong class="font-semibold">핵심 준수 요건:</strong>
+                                <ul class="list-disc list-inside mt-2 space-y-2 pl-4">
+                                    <li>아동의 개인정보를 수집하기 전, <strong class="text-sky-700">반드시 '확인 가능한 부모 동의'</strong>를 받아야 합니다.</li>
+                                    <li>부모는 자녀의 정보를 검토·삭제하고, 추가 수집을 막을 권리가 있습니다.</li>
+                                    <li><strong class="font-semibold">학교가 부모를 대신해 동의할 수 있지만,</strong> 이 동의는 <span class="bg-sky-100 text-sky-800 px-2 py-1 rounded">오직 '교육적 목적'으로만</span> 제한되며 상업적 사용은 금지됩니다.</li>
+                                </ul>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="section-3" class="my-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 border-l-8 border-orange-500 pl-4 mb-8 flex items-center">💻 FERPA & COPPA 관련 에듀테크 리스트</h2>
+            <p class="mb-8">학생 데이터를 안전하게 보호하기 위해 노력하는 대표적인 에듀테크 및 서비스들입니다. 각 서비스를 클릭하면 상세 내용을 확인할 수 있습니다.</p>
+
+            <div class="space-y-4">
+                <details id="section-3-1" class="bg-white rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+                    <summary class="p-5 flex justify-between items-center">
+                        <h3 class="text-xl md:text-2xl font-bold text-orange-800">📄 Foxit (폭스잇)</h3>
+                        <div class="arrow-down transition-transform duration-300">▼</div>
+                    </summary>
+                    <div class="p-5 border-t border-slate-200">
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><b class="w-32 flex-shrink-0">FERPA 준수:</b> <span>안전한 문서 처리, 역할 기반 접근 제어, 감사 추적, 개인정보 삭제 도구 등으로 FERPA 준수를 지원합니다.</span></li>
+                            <li class="flex items-start"><b class="w-32 flex-shrink-0">COPPA 미적용:</b> <span>13세 미만 학생에게 직접 정보를 수집하는 서비스가 아니므로 적용 대상이 아닙니다.</span></li>
+                            <li class="flex items-start"><b class="w-32 flex-shrink-0">유형:</b> <span>문서 관리 및 전자 서명 솔루션</span></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details id="section-3-2" class="bg-white rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+                    <summary class="p-5 flex justify-between items-center">
+                        <h3 class="text-xl md:text-2xl font-bold text-orange-800">☁️ Microsoft (마이크로소프트)</h3>
+                        <div class="arrow-down transition-transform duration-300">▼</div>
+                    </summary>
+                    <div class="p-5 border-t border-slate-200">
+                         <ul class="space-y-3">
+                            <li class="flex items-start"><b class="w-32 flex-shrink-0">FERPA 준수:</b> <span>자사를 '학교 관계자'로 지정하는 데 동의하며, Azure, Office 365 등 다양한 서비스에서 FERPA 준수를 지원합니다.</span></li>
+                            <li class="flex items-start"><b class="w-32 flex-shrink-0">COPPA 미적용:</b> <span>서비스에 직접 적용되지 않으며, 학교(고객)가 최종 사용자에 대한 부모 동의를 얻을 책임이 있습니다.</span></li>
+                            <li class="flex items-start"><b class="w-32 flex-shrink-0">유형:</b> <span>클라우드 플랫폼 및 온라인 교육 서비스</span></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details id="section-3-3" class="bg-white rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+                    <summary class="p-5 flex justify-between items-center">
+                        <h3 class="text-xl md:text-2xl font-bold text-orange-800">🤖 Brisk Teaching (브리스크 티칭)</h3>
+                        <div class="arrow-down transition-transform duration-300">▼</div>
+                    </summary>
+                    <div class="p-5 border-t border-slate-200">
+                         <ul class="space-y-3">
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">FERPA, COPPA 등 준수:</b> <span>FERPA, COPPA, GDPR 등 엄격한 학생 개인정보 보호 법규를 준수하도록 설계된 안전한 교육용 AI 플랫폼입니다.</span></li>
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">데이터 처리 원칙:</b> <span>교사가 사용할 때만 활성화되며, 학생 데이터를 수집/저장/학습에 사용하지 않고, 판매/공유하지 않습니다.</span></li>
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">유형:</b> <span>교육용 AI 도구 및 플랫폼</span></li>
+                        </ul>
+                    </div>
+                </details>
+                
+                <details id="section-3-4" class="bg-white rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+                    <summary class="p-5 flex justify-between items-center">
+                        <h3 class="text-xl md:text-2xl font-bold text-orange-800">😊 테바소프트 - 심스페이스</h3>
+                        <div class="arrow-down transition-transform duration-300">▼</div>
+                    </summary>
+                    <div class="p-5 border-t border-slate-200">
+                         <ul class="space-y-3">
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">FERPA, COPPA 인증:</b> <span>국내 기업 최초로 iKeepSafe로부터 FERPA, COPPA, CSPC 3종 인증을 모두 획득하여 미국 교육 시장 진출 요건을 갖췄습니다.</span></li>
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">신뢰성:</b> <span>iKeepSafe 인증은 실제 서비스의 데이터 처리 전반을 검토하고 매년 갱신 심사를 거치는 신뢰도 높은 인증입니다.</span></li>
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">유형:</b> <span>사회정서학습(SEL) 기반 AI 마음일기 플랫폼</span></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details id="section-3-5" class="bg-white rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+                    <summary class="p-5 flex justify-between items-center">
+                        <h3 class="text-xl md:text-2xl font-bold text-orange-800">📊 Avant Assessment (아방트 평가)</h3>
+                        <div class="arrow-down transition-transform duration-300">▼</div>
+                    </summary>
+                    <div class="p-5 border-t border-slate-200">
+                         <ul class="space-y-3">
+                             <li class="flex items-start"><b class="w-48 flex-shrink-0">공급업체 투명성 강조:</b> <span>단순히 "FERPA 준수"라고만 주장하는 공급업체는 <span class="bg-red-200 text-red-800 px-2 py-1 rounded-md font-bold">'적신호'</span>일 수 있다고 경고하며, 공급업체가 법규를 명확히 이해하고 있는지 확인하는 것이 중요하다고 강조합니다.</span></li>
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">유형:</b> <span>평가 솔루션 및 관련 교육 콘텐츠</span></li>
+                        </ul>
+                    </div>
+                </details>
+                
+                <details id="section-3-6" class="bg-white rounded-lg shadow-sm transition-shadow duration-300 hover:shadow-md">
+                    <summary class="p-5 flex justify-between items-center">
+                        <h3 class="text-xl md:text-2xl font-bold text-orange-800">🇰🇷 NIA K-클라우드 프로젝트 기업</h3>
+                        <div class="arrow-down transition-transform duration-300">▼</div>
+                    </summary>
+                    <div class="p-5 border-t border-slate-200">
+                        <p class="mb-4">엘리스그룹, 팀모노리스, 아티피셜소사이어티, 셈웨어 등 국내 기업들도 AI 디지털교과서 개발에 참여하며 한국의 클라우드 보안인증(CSAP) 등 국내외 가이드라인 준수를 위해 노력하고 있습니다. (소스에 FERPA/COPPA 직접 언급은 없음)</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">목표:</b> <span>공교육 디지털 전환 정책에 따라 클라우드 기반 SaaS 도입과 데이터 보호를 강화하는 것을 목표로 합니다.</span></li>
+                            <li class="flex items-start"><b class="w-48 flex-shrink-0">유형:</b> <span>AI 디지털교과서, AI 학습 플랫폼 등</span></li>
+                        </ul>
+                    </div>
+                </details>
+                </div>
+        </section>
+
+        <section id="section-4" class="my-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 border-l-8 border-indigo-500 pl-4 mb-8 flex items-center">🤔 교사가 알아야 할 중요 고려사항</h2>
+            <p class="mb-8">디지털 교육 환경에서 학생 데이터를 안전하게 관리하기 위해 선생님께서 꼭 기억해 주셔야 할 핵심 사항들입니다.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-semibold text-indigo-800 mb-3">벤더(공급업체) 검토</h3>
+                    <p>도입하려는 서비스의 개인정보처리방침을 꼼꼼히 확인하세요. 'FERPA 준수' 문구만 믿지 말고, 데이터를 어떻게 수집, 사용, 보호하는지 구체적인 내용을 확인해야 합니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-semibold text-indigo-800 mb-3">학부모 동의</h3>
+                    <p>13세 미만 대상 서비스는 '확인 가능한 부모 동의'가 필수입니다. 충분한 정보를 제공하고 동의 여부를 편안하게 결정할 기회를 주어야 합니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-semibold text-indigo-800 mb-3">투명한 데이터 관리</h3>
+                    <p>데이터 수집 목적, 방법, 보관 기간 등을 학생과 학부모가 이해하기 쉽게 설명하고 동의를 구해야 합니다. 특히 감정, 태도 등 민감 정보는 더욱 주의가 필요합니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-semibold text-indigo-800 mb-3">안전한 기술 활용</h3>
+                    <p>암호화, 접근 권한 관리 등 기본적인 보안 조치를 확인하세요. 특히 시선 추적 등 생체 정보를 요구하는 기술은 학생에게 큰 스트레스를 줄 수 있어 신중해야 합니다.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 space-y-8">
+                 <div class="bg-red-100 border-l-8 border-red-500 p-6 md:p-8 rounded-r-lg shadow-md">
+                    <div class="flex items-center">
+                        <div class="text-4xl mr-5">🚫</div>
+                        <div>
+                            <h4 class="font-bold text-red-800 text-2xl mb-2">'다크패턴(Dark Patterns)'을 주의하세요!</h4>
+                            <p class="font-semibold emphasis-box text-red-700">
+                                사용자를 속여 의도치 않은 행동을 유도하는 UI/UX 디자인입니다. 특히 아동·청소년 대상 서비스에서 불투명한 결제 구조 등으로 경제적 부담을 지게 할 수 있어 엄격한 주의가 필요합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-teal-100 border-l-8 border-teal-500 p-6 md:p-8 rounded-r-lg shadow-md">
+                    <div class="flex items-center">
+                        <div class="text-4xl mr-5">🚀</div>
+                        <div>
+                            <h4 class="font-bold text-teal-800 text-2xl mb-2">미래 변화에 대한 대비 (COPPA 2.0)</h4>
+                            <p class="font-semibold emphasis-box text-teal-700">
+                                앞으로 COPPA의 보호 대상이 16세 이하로 확대되고, 타겟 광고 금지, '지우개 버튼' 도입 등 더 엄격한 규제가 논의되고 있습니다. 변화에 민감한 공급업체와 파트너십을 맺는 것이 중요합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-20 mb-10">
+            <p class="text-lg md:text-xl font-semibold text-slate-700">학생들의 디지털 학습 경험을 안전하고 신뢰할 수 있게 만들기 위해, 교사 여러분의 지속적인 관심과 노력이 중요합니다.</p>
+            <p class="mt-4 text-slate-600">이 자료가 교육 현장에서 학생 데이터 보호를 위한 의사결정에 도움이 되기를 바랍니다.</p>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- 네비게이션 링크 자동 생성 ---
+            const navLinksContainer = document.getElementById('nav-links');
+            const mobileNavLinksContainer = document.getElementById('mobile-nav-links');
+            const sections = document.querySelectorAll('h2, h3');
+            
+            const emojiMap = {
+                'FERPA': '📜',
+                'COPPA': '🧒',
+                '에듀테크': '💻',
+                '고려사항': '🤔',
+                'Foxit': '📄',
+                'Microsoft': '☁️',
+                'Brisk': '🤖',
+                '테바소프트': '😊',
+                'Avant': '📊',
+                'NIA': '🇰🇷'
+            };
+
+            sections.forEach((section, index) => {
+                const title = section.textContent.split('(')[0].trim();
+                const id = section.closest('section, details').id;
+
+                if (!id) return;
+
+                let emoji = '🔹';
+                for (const key in emojiMap) {
+                    if (title.includes(key)) {
+                        emoji = emojiMap[key];
+                        break;
+                    }
+                }
+                
+                // PC 네비게이션 링크
+                if (navLinksContainer && section.tagName === 'H2') {
+                    const link = document.createElement('a');
+                    link.href = `#${id}`;
+                    link.innerHTML = `${emoji} ${title}`;
+                    link.className = 'nav-link text-gray-700 hover:bg-sky-100 hover:text-sky-800 px-3 py-2 rounded-md font-medium transition-colors duration-300';
+                    navLinksContainer.appendChild(link);
+                }
+
+                // 모바일 네비게이션 링크 (H2, H3 모두)
+                if (mobileNavLinksContainer) {
+                     const mobileLink = document.createElement('a');
+                     mobileLink.href = `#${id}`;
+                     mobileLink.innerHTML = `${emoji} ${title}`;
+                     mobileLink.className = `nav-link text-gray-700 block px-3 py-2 rounded-md text-base font-medium hover:bg-sky-100 hover:text-sky-800 ${section.tagName === 'H3' ? 'pl-8' : ''}`;
+                     mobileNavLinksContainer.appendChild(mobileLink);
+                }
+            });
+
+            // --- 모바일 메뉴 토글 ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+            mobileNavLinksContainer.addEventListener('click', (e) => {
+                if(e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
